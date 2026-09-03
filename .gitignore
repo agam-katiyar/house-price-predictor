@@ -1,0 +1,39 @@
+# python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+
+# jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# data — don't push raw or processed CSVs
+data/raw/*.csv
+data/processed/*.csv
+
+# saved models
+models/*.pkl
+models/*.json
+
+# plots — comment out if you want to push charts
+# plots/
+
+# virtual envs
+venv/
+env/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
