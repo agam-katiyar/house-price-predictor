@@ -2,7 +2,13 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+from pathlib import Path
 from sklearn.metrics import mean_squared_error, r2_score
+
+# resolve plots/ relative to project root, not wherever the notebook is running from
+PLOTS_DIR = Path(__file__).resolve().parent.parent / "plots"
+PLOTS_DIR.mkdir(exist_ok=True)
+
 
 
 def rmse(y_true, y_pred) -> float:
@@ -35,7 +41,7 @@ def plot_residuals(y_true, y_pred, label: str = "model"):
     axes[1].set_title(f"{label} — Residuals")
 
     plt.tight_layout()
-    plt.savefig(f"plots/residuals_{label.lower().replace(' ', '_')}.png", dpi=120)
+    plt.savefig(PLOTS_DIR / f"residuals_{label.lower().replace(' ', '_')}.png", dpi=120)
     plt.show()
 
 
@@ -49,5 +55,5 @@ def plot_feature_importance(model, feature_names: list, top_n: int = 15):
     plt.xlabel("Importance")
     plt.title("Feature Importance")
     plt.tight_layout()
-    plt.savefig("plots/feature_importance.png", dpi=120)
+    plt.savefig(PLOTS_DIR / "feature_importance.png", dpi=120)
     plt.show()
