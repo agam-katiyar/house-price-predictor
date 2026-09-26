@@ -55,12 +55,10 @@ jupyter notebook
 
 | model | RMSE | R² |
 |-------|------|-----|
-| Linear Regression | — | — |
-| Ridge | — | — |
-| Lasso | — | — |
-| XGBoost | — | — |
-
-*will update after running the notebooks*
+| Linear Regression | 0.6760 | 0.65 |
+| Ridge | 0.6689 | 0.66 |
+| Lasso | 0.6689 | 0.66 |
+| XGBoost (tuned) | **0.4473** | **0.84** |
 
 ---
 
